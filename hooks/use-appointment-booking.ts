@@ -17,7 +17,7 @@ interface AppointmentData {
   userInfo: UserInfo
 }
 
-const WHATSAPP_NUMBER = "14845463215"
+const WHATSAPP_NUMBER = "14846137476"
 
 export function useAppointmentBooking() {
   const [step, setStep] = useState<"datetime" | "contact">("datetime")
@@ -56,18 +56,18 @@ export function useAppointmentBooking() {
 
   const sendToWhatsApp = (data: AppointmentData) => {
     const formattedDate = format(data.date, "EEEE, d 'de' MMMM 'de' yyyy", { locale: es })
-    const message = `🗓️ *NUEVA CITA AGENDADA - TravelWiseMed*
+    const message = `*NUEVA CITA AGENDADA - TravelWiseMed*
 
-📅 *Fecha:* ${formattedDate}
-🕐 *Hora:* ${data.time}
+*Fecha:* ${formattedDate}
+*Hora:* ${data.time}
 
-👤 *Información del Cliente:*
+*Información del Cliente:*
 • *Nombre:* ${data.userInfo.name}
 • *Teléfono:* ${data.userInfo.phone}
 • *Email:* ${data.userInfo.email || "No proporcionado"}
 ${data.userInfo.notes ? `• *Notas:* ${data.userInfo.notes}` : ""}
 
-✅ *Cita confirmada exitosamente*
+*Cita confirmada exitosamente*
 Nos pondremos en contacto contigo pronto.`
 
     const encodedMessage = encodeURIComponent(message)

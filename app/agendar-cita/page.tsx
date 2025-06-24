@@ -6,7 +6,6 @@ export default function AgendarCita() {
   return (
     <>
       <Navbar />
-      <div className="h-15" />
       <Calendar />
       <Footer />
     </>

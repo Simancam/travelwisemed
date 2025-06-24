@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full z-20 top-0 start-0 bg-white border-b border-gray-200 shadow-md">
+    <nav className="sticky w-full z-20 top-0 start-0 bg-white border-b border-gray-200 shadow-md">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">

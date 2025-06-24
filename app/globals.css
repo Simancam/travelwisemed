@@ -3,6 +3,32 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* === Corregir visuales iniciales y scroll === */
+html {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  backface-visibility: hidden; /* 🧼 Evita glitches por reflow */
+  transform: translateZ(0); 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* REMOVIDO: overflow-x: hidden; - esto rompe position: sticky */
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Si necesitas prevenir scroll horizontal, hazlo en el contenedor principal */
+.main-container {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 /* Eliminado el modo dark */
 :root {
   --font-philosopher: var(--font-philosopher);
@@ -84,35 +110,39 @@
   --radius-xl: calc(var(--radius) + 4px);
   --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
   --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+
   @keyframes shimmer-slide {
-  to {
-    transform: translate(calc(100cqw - 100%), 0);
+    to {
+      transform: translate(calc(100cqw - 100%), 0);
     }
   }
+
   @keyframes spin-around {
-  0% {
-    transform: translateZ(0) rotate(0);
+    0% {
+      transform: translateZ(0) rotate(0);
     }
-  15%, 35% {
-    transform: translateZ(0) rotate(90deg);
+    15%, 35% {
+      transform: translateZ(0) rotate(90deg);
     }
-  65%, 85% {
-    transform: translateZ(0) rotate(270deg);
+    65%, 85% {
+      transform: translateZ(0) rotate(270deg);
     }
-  100% {
-    transform: translateZ(0) rotate(360deg);
+    100% {
+      transform: translateZ(0) rotate(360deg);
     }
   }
-  --animate-pulse: pulse var(--duration) ease-out infinite
-;
+
+  --animate-pulse: pulse var(--duration) ease-out infinite;
+
   @keyframes pulse {
-  0%, 100% {
-    boxShadow: 0 0 0 0 var(--pulse-color);
+    0%, 100% {
+      boxShadow: 0 0 0 0 var(--pulse-color);
     }
-  50% {
-    boxShadow: 0 0 0 8px var(--pulse-color);
+    50% {
+      boxShadow: 0 0 0 8px var(--pulse-color);
     }
-  }}
+  }
+}
 
 body {
   font-family: var(--font-lato), Arial, Helvetica, sans-serif;
@@ -130,34 +160,22 @@ body {
   font-family: var(--font-lato), sans-serif;
 }
 
-#services {
-  scroll-margin-top: 80px; 
+/* === Corrección de scroll al navegar por secciones ancladas === */
+#services,
+#features,
+#about {
+  scroll-margin-top: 80px;
 }
 
-#features{
-  scroll-margin-top: 80px; 
-}
-
-#about{
-  scroll-margin-top: 80px; 
-}
-
-/* Para scroll suave en todo el documento */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Para un contenedor específico */
+/* Scroll container y transición */
 .scroll-container {
   scroll-behavior: smooth;
 }
 
-/* Para control más avanzado con transiciones */
 .smooth-scroll {
   transition: scroll-position 0.5s ease-in-out;
 }
 
-/* Para navegadores que soportan scroll-padding */
 .scroll-padding {
   scroll-padding-top: 2rem;
 }
@@ -166,6 +184,7 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
