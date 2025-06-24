@@ -6,21 +6,22 @@ import { Globe, Heart, Stethoscope } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+import Link from "next/link";
 
 // Configuración de características
 const features = [
-  { 
-    Icon: Globe, 
-    title: "Asesoría de Viajes" 
+  {
+    Icon: Globe,
+    title: "Asesoría de Viajes",
   },
-  { 
-    Icon: Heart, 
-    title: "Turismo Social" 
+  {
+    Icon: Heart,
+    title: "Turismo Social",
   },
-  { 
-    Icon: Stethoscope, 
-    title: "Consultas Médicas" 
-  }
+  {
+    Icon: Stethoscope,
+    title: "Consultas Médicas",
+  },
 ];
 
 export default function HeroSection() {
@@ -38,7 +39,6 @@ export default function HeroSection() {
           animate="animate"
         >
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            
             {/* Sección de contenido de texto */}
             <div className="space-y-6">
               {/* Título principal */}
@@ -46,7 +46,7 @@ export default function HeroSection() {
                 className="font-title text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
                 variants={fadeInUp}
               >
-                Viaja con 
+                Viaja con
                 <span className="block bg-gradient-to-r from-[#ab2b49] to-[#22194f] bg-clip-text text-transparent">
                   Confianza
                 </span>
@@ -80,17 +80,16 @@ export default function HeroSection() {
               </motion.div>
 
               {/* Botón de acción */}
-              <motion.div 
-                className="sm:flex-row gap-4" 
-                variants={fadeInUp}
-              >
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-gray-300 hover:border-[#ab2b49] text-gray-700 hover:text-[#ab2b49] px-30 py-6 text-lg font-semibold rounded-full transition-all duration-300 bg-white hover:bg-white"
-                >
-                  Solicitar Asesoría
-                </Button>
+              <motion.div className="sm:flex-row gap-4" variants={fadeInUp}>
+                <Link href="/agendar-cita">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-2 border-gray-300 hover:border-[#ab2b49] text-gray-700 hover:text-[#ab2b49] px-30 py-6 text-lg font-semibold rounded-full transition-all duration-300 bg-white hover:bg-white"
+                  >
+                    Solicitar Asesoría
+                  </Button>
+                </Link>
               </motion.div>
             </div>
 
@@ -109,7 +108,6 @@ export default function HeroSection() {
                 />
               </div>
             </motion.div>
-            
           </div>
         </motion.div>
       </div>

@@ -42,7 +42,7 @@ export default function Navbar() {
             aria-expanded={isMenuOpen}
           >
             <span className="sr-only">Open main menu</span>
-            <Menu className="w-5 h-5" />
+            <Menu className="w-5 h-5 text-[#ab2b49]" />
           </button>
         </div>
 
@@ -110,7 +110,7 @@ export default function Navbar() {
                   className="border-t border-gray-200 pt-4 mt-4"
                 >
                   <Link
-                    href=""
+                    href="/agendar-cita"
                     className="flex items-center space-x-2 py-2 px-3 bg-[#ab2b49] text-white rounded-md hover:bg-[#22194f] transition-colors duration-300"
                     onClick={() => setIsMenuOpen(false)}
                   >

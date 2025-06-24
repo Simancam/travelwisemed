@@ -1,8 +1,8 @@
 import Navbar from "@/components/navbar"
-import HeroSection from "@/sections/hero-section"
-import AboutSection from "@/sections/about-section"
-import ServicesSection from "@/sections/services-section"
-import FeaturesSection from "@/sections/features-section"
+import HeroSection from "@/sections/home/hero-section"
+import AboutSection from "@/sections/home/about-section"
+import ServicesSection from "@/sections/home/services-section"
+import FeaturesSection from "@/sections/home/features-section"
 import Footer from "@/components/footer"
 import WaveDivider from "@/components/wave-divider"
 

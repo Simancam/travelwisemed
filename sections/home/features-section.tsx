@@ -11,43 +11,46 @@ import {
   Globe,
 } from "lucide-react";
 
-import {
-  fadeInUp,
-  fadeInRight,
-  staggerContainer,
-} from "@/lib/animations";
+import { fadeInUp, fadeInRight, staggerContainer } from "@/lib/animations";
+import Link from "next/link";
 
 // Configuración de características principales
 const features = [
   {
     icon: Shield,
     title: "Confianza Garantizada",
-    description: "Contamos con años de experiencia guiando a nuestros clientes en procesos internacionales de forma segura y confiable.",
+    description:
+      "Contamos con años de experiencia guiando a nuestros clientes en procesos internacionales de forma segura y confiable.",
   },
   {
     icon: Clock,
     title: "Procesos Ágiles",
-    description: "Optimizamos cada paso para que obtengas resultados rápidos sin complicaciones ni demoras innecesarias.",
+    description:
+      "Optimizamos cada paso para que obtengas resultados rápidos sin complicaciones ni demoras innecesarias.",
   },
   {
     icon: Users,
     title: "Atención 100% Personalizada",
-    description: "Nos enfocamos en ti. Analizamos tu caso y creamos soluciones hechas a la medida de tus objetivos.",
+    description:
+      "Nos enfocamos en ti. Analizamos tu caso y creamos soluciones hechas a la medida de tus objetivos.",
   },
   {
     icon: Award,
     title: "Resultados Comprobados",
-    description: "Nuestra trayectoria habla por nosotros: cientos de clientes satisfechos que hoy disfrutan de sus logros internacionales.",
+    description:
+      "Nuestra trayectoria habla por nosotros: cientos de clientes satisfechos que hoy disfrutan de sus logros internacionales.",
   },
   {
     icon: HeadphonesIcon,
     title: "Soporte Disponible Siempre",
-    description: "¿Tienes dudas o necesitas ayuda? Estamos disponibles 24/7 para acompañarte en cada etapa del proceso.",
+    description:
+      "¿Tienes dudas o necesitas ayuda? Estamos disponibles 24/7 para acompañarte en cada etapa del proceso.",
   },
   {
     icon: Globe,
     title: "Comunicación Sin Barreras",
-    description: "Hablamos tu idioma. Nuestro equipo bilingüe facilita cada paso para que te sientas cómodo y entendido.",
+    description:
+      "Hablamos tu idioma. Nuestro equipo bilingüe facilita cada paso para que te sientas cómodo y entendido.",
   },
 ];
 
@@ -64,12 +67,8 @@ export default function FeaturesSection() {
           initial="initial"
           animate={isInView ? "animate" : "initial"}
         >
-          
           {/* Encabezado de sección */}
-          <motion.div 
-            className="text-center mb-16" 
-            variants={fadeInUp}
-          >
+          <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="font-title text-4xl md:text-5xl font-bold mb-6">
               ¿Por qué{" "}
               <span className="bg-gradient-to-r from-[#ab2b49] to-[#22194f] bg-clip-text text-transparent">
@@ -125,16 +124,17 @@ export default function FeaturesSection() {
                 Únete a quienes ya confiaron en nosotros y lograron lo que
                 buscaban. Hoy puede ser el comienzo de tu nueva historia.
               </p>
-              <motion.button
-                className="bg-white text-[#ab2b49] px-6 sm:px-8 md:px-10 lg:px-40 py-3 sm:py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 text-sm sm:text-base md:text-lg w-full sm:w-auto min-w-[200px] sm:min-w-[250px] md:min-w-[300px]"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Agenda tu Asesoría Gratis
-              </motion.button>
+              <Link href="/agendar-cita">
+                <motion.button
+                  className="bg-white text-[#ab2b49] px-6 sm:px-8 md:px-10 lg:px-40 py-3 sm:py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 text-sm sm:text-base md:text-lg w-full sm:w-auto min-w-[200px] sm:min-w-[250px] md:min-w-[300px]"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Agenda tu Asesoría Gratis
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
-          
         </motion.div>
       </div>
     </section>

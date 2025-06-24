@@ -142,6 +142,25 @@ body {
   scroll-margin-top: 80px; 
 }
 
+/* Para scroll suave en todo el documento */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Para un contenedor específico */
+.scroll-container {
+  scroll-behavior: smooth;
+}
+
+/* Para control más avanzado con transiciones */
+.smooth-scroll {
+  transition: scroll-position 0.5s ease-in-out;
+}
+
+/* Para navegadores que soportan scroll-padding */
+.scroll-padding {
+  scroll-padding-top: 2rem;
+}
 
 @layer base {
   * {
